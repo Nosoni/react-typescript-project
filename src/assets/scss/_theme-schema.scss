@@ -9,8 +9,8 @@ $themes: (
   ),
 );
 
-@each $theme, $map in $themes{
-  .theme-#{$theme}{
+@each $theme, $map in $themes {
+  .theme-#{$theme} {
     background-color: map-get($map, $key: "bg-color");
     color: map-get($map, $key: "text-color");
   }
