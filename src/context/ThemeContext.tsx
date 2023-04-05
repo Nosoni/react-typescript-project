@@ -1,8 +1,11 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const context = createContext({
   theme: "",
-  setTheme: (theme: string) => {},
+  changeTheme: () => {},
+  isLightTheme: (): boolean => {
+    return false;
+  },
 });
 
 const themeProvider = () => {
@@ -18,9 +21,18 @@ const themeProvider = () => {
   };
   const [theme, setTheme] = useState(getDefaultTheme());
 
+  const changeTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const isLightTheme = (): boolean => {
+    return theme === "light";
+  };
+
   return {
     theme,
-    setTheme,
+    changeTheme,
+    isLightTheme,
   };
 };
 

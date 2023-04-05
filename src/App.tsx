@@ -1,13 +1,13 @@
-import Layout from "./components/Layout";
-import { ThemeContext } from "./components/ThemeContext";
+import { ThemeContext } from "./context/ThemeContext";
 import "./App.scss";
+import Layout from "./layouts/Layout";
 
-function App() {
+const App = () => {
   return (
     <ThemeContext>
       <Layout />
     </ThemeContext>
   );
-}
+};
 
 export default App;
